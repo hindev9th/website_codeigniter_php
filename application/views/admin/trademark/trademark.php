@@ -5,11 +5,11 @@
 			<div class="page-inner py-5">
 				<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 					<div>
-						<h2 class="text-white pb-2 fw-bold">Danh mục</h2>
-						<h5 class="text-white op-7 mb-2">Danh sách danh mục</h5>
+						<h2 class="text-white pb-2 fw-bold">Thương hiệu</h2>
+						<h5 class="text-white op-7 mb-2">Danh sách thương hiệu</h5>
 					</div>
 					<div class="ml-md-auto py-2 py-md-0">
-						<a href="category/add" class="btn btn-secondary btn-round">Thêm Danh mục</a>
+						<a href="trademark/add" class="btn btn-secondary btn-round">Thêm thương hiệu</a>
 					</div>
 				</div>
 			</div>
@@ -45,8 +45,8 @@
 											<thead>
 												<tr>
 													<td>ID</td>
-													<td>Mã danh mục</td>
-													<td>Tên danh mục</td>
+													<td>Mã thương hiệu</td>
+													<td>Tên thương hiệu</td>
 													<td></td>
 												</tr>
 											</thead>
@@ -60,14 +60,14 @@
 														</div>
 													</td>
 													<td>
-														<?= $value->Ma_DM ?>
+														<?= $value->ma_th ?>
 													</td>
 													<td>
-														<?= $value->Ten_DM ?>
+														<?= $value->ten_th ?>
 													</td>
 													<td class="text-center">
-														<a href="category/edit/<?= $value->id ?>" class="btn btn-warning">Sửa</a>
-														<a href="category/delete/<?= $value->id ?>" class="btn btn-danger">Xóa</a>
+														<a href="trademark/edit/<?= $value->id ?>" class="btn btn-warning">Sửa</a>
+														<a href="trademark/delete/<?= $value->id ?>" class="btn btn-danger">Xóa</a>
 
 													</td>
 												</tr>
@@ -100,5 +100,5 @@
 </div>
 <script>
 	$('#home-page').removeClass("active");
-	$('#sub-danh-muc, #danh-muc').addClass("active");
+	$('#sub-thuong-hieu, #danh-muc').addClass("active");
 </script>

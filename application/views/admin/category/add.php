@@ -9,7 +9,7 @@
 						<h5 class="text-white op-7 mb-2">Thêm danh mục</h5>
 					</div>
 					<div class="ml-md-auto py-2 py-md-0">
-						<a href="<?= base_url() ?>index.php/category" class="btn btn-secondary btn-round" id="btn-back">Quay lại</a>
+						<a href="<?= base_url() ?>index.php/admin/category" class="btn btn-secondary btn-round" id="btn-back">Quay lại</a>
 					</div>
 				</div>
 			</div>
@@ -23,12 +23,12 @@
 								<div class="col-md-4"></div>
 								<div class="col-md-4">
 									<div class="table-responsive table-hover table-sales" id="table-data">
-										<form action="<?= base_url() ?>index.php/category/insert" method="post">
-											<input type="hidden" name="id" value="<?= $data->id ?>">
-											<label for="Ma_DM" class="mb-0">Mã danh mục</label>
-											<input type="text" name="Ma_DM" id="Ma_DM" value="<?= $data->Ma_DM ?>" placeholder="Mã danh mục" class="form-control">
-											<label for="Ten_DM" class="mt-2 mb-0">Tên danh mục</label>
-											<input type="text" name="Ten_DM" id="Ten_DM" value="<?= $data->Ten_DM ?>" placeholder="Tên danh mục" class="form-control">
+										<form action="<?= base_url() ?>index.php/admin/category/save" method="post">
+											<input type="hidden" name="id" value="<?= isset($data->id) ? $data->id : '' ?>">
+											<label for="ma_dm" class="mb-0" >Mã danh mục</label>
+											<input type="text" name="ma_dm" id="ma_dm" value="<?= isset($data->ma_dm) ? $data->ma_dm : '' ?>" placeholder="Mã danh mục" class="form-control">
+											<label for="ten_dm" class="mt-2 mb-0" >Tên danh mục</label>
+											<input type="text" name="ten_dm" id="ten_dm" value="<?= isset($data->ten_dm) ? $data->ten_dm : '' ?>" placeholder="Tên danh mục" class="form-control">
 											<input type="submit" class="btn btn-primary mt-2" value="Lưu">
 										</form>
 									</div>
@@ -43,5 +43,7 @@
 	<?php $this->load->view("include/footer"); ?>
 </div>
 <script>
-
+	$('#home-page').removeClass("active");
+	$('#sub-danh-muc, #danh-muc').addClass("active");
 </script>
+

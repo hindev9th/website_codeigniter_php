@@ -14,6 +14,11 @@
 			}
 		});
 	</script>
+	<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+	<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
+
+
+
 
 </head>
 <body>

@@ -4,13 +4,14 @@ class Category extends CI_Controller{
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->view("include/header");
-		$this->load->view("include/menu-left");
 	}
 
 	public function index(){
+		$this->load->view("include/header");
+		$this->load->view("include/menu-left");
+
 		$query['data'] = $this->Category_model->getData();
-		$this->load->view("category/category",$query);
+		$this->load->view("admin/category/category",$query);
 	}
 	public function search(){
 		$search = $this->input->post('search');
@@ -22,7 +23,7 @@ class Category extends CI_Controller{
 		$this->load->view("include/header");
 		$this->load->view("include/menu-left");
 
-		$this->load->view("category/add");
+		$this->load->view("admin/category/add");
 	}
 	public function edit($id){
 		$this->load->view("include/header");
@@ -30,34 +31,30 @@ class Category extends CI_Controller{
 
 		$query['data'] = $this->Category_model->edit($id);
 
-		$this->load->view("category/edit",$query);
+		$this->load->view("admin/category/add",$query);
 	}
-	public function insert(){
-		$ma_dm = $this->input->post('Ma_DM');
-		$ten_dm = $this->input->post('Ten_DM');
+	public function save(){
+		$id = $this->input->post('id');
+		$ma_dm = $this->input->post('ma_dm');
+		$ten_dm = $this->input->post('ten_dm');
 
-		if($this->Category_model->insert($ma_dm,$ten_dm)){
-			header("Location:/myProject/index.php/category");
+		if (empty($id)){
+			if($this->Category_model->insert($ma_dm,$ten_dm)){
+				header("Location:".base_url()."index.php/admin/category");
+			}else{
+
+			}
 		}else{
+			$this->Category_model->update($id,$ma_dm,$ten_dm);
 
-		}
-	}
-
-	public function update(){
-		$id	= $this->input->post('id');
-		$ma_dm = $this->input->post('Ma_DM');
-		$ten_dm = $this->input->post('Ten_DM');
-
-		if($this->Category_model->update($id,$ma_dm,$ten_dm)){
-			header("Location:/myProject/index.php/category");
-		}else{
+			header("Location:".base_url()."index.php/admin/category");
 
 		}
 	}
 
 	public function delete($id){
 		if($this->Category_model->delete($id)){
-			header("Location:/myProject/index.php/category");
+			header("Location:".base_url()."index.php/admin/category");
 		}else{
 
 		}

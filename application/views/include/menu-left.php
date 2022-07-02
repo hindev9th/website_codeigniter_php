@@ -40,7 +40,7 @@
 			</div>
 			<ul class="nav nav-primary">
 				<li class="nav-item active" id="home-page">
-					<a  href="<?=base_url() ?>index.php/home">
+					<a  href="<?=base_url() ?>index.php/admin/home">
 						<i class="fas fa-home"></i>
 						<p>Dashboard</p>
 					</a>
@@ -49,7 +49,7 @@
 							<span class="sidebar-mini-icon">
 								<i class="fa fa-ellipsis-h"></i>
 							</span>
-					<h4 class="text-section">Cac thanh phan</h4>
+					<h4 class="text-section">Các thành phần</h4>
 				</li>
 				<li class="nav-item" id="danh-muc">
 					<a data-toggle="collapse" href="#base">
@@ -60,13 +60,13 @@
 					<div class="collapse" id="base">
 						<ul class="nav nav-collapse">
 							<li id="sub-danh-muc">
-								<a href="<?=base_url() ?>index.php/category">
-									<span class="sub-item">Danh sách danh mục</span>
+								<a href="<?=base_url() ?>index.php/admin/category">
+									<span class="sub-item">Danh mục</span>
 								</a>
 							</li>
 							<li id="sub-thuong-hieu">
-								<a href="<?=base_url() ?>index.php/trademark">
-									<span class="sub-item">Danh sách thương hiệu</span>
+								<a href="<?=base_url() ?>index.php/admin/trademark">
+									<span class="sub-item">Thương hiệu</span>
 								</a>
 							</li>
 						</ul>
@@ -87,13 +87,13 @@
 							</li>
 							<li class="sub-item-btn">
 								<a href="overlay-sidebar.html">
-									<span class="sub-item">Danh sách sản phẩm</span>
+									<span class="sub-item">Sản phẩm</span>
 								</a>
 							</li>
 						</ul>
 					</div>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item" id="tin-tuc">
 					<a data-toggle="collapse" href="#forms">
 						<i class="fas fa-pen-square"></i>
 						<p>Tin tức</p>
@@ -101,14 +101,14 @@
 					</a>
 					<div class="collapse" id="forms">
 						<ul class="nav nav-collapse">
-							<li class="sub-item-btn">
-								<a href="forms/forms.html">
+							<li class="sub-them-tin">
+								<a href="<?= base_url() ?>index.php/admin/news/add">
 									<span class="sub-item">Viết bài</span>
 								</a>
 							</li>
-							<li class="sub-item-btn">
-								<a href="forms/forms.html">
-									<span class="sub-item">Danh sách tin tức</span>
+							<li class="sub-tin-tuc">
+								<a href="<?= base_url() ?>index.php/admin/news">
+									<span class="sub-item">Tin tức</span>
 								</a>
 							</li>
 						</ul>
@@ -129,7 +129,7 @@
 							</li>
 							<li>
 								<a href="tables/datatables.html">
-									<span class="sub-item">Danh sách banner</span>
+									<span class="sub-item">Banner</span>
 								</a>
 							</li>
 						</ul>
