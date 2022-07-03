@@ -51,8 +51,8 @@
 												</tr>
 											</thead>
 											<tbody>
-												<?php
-												foreach ($data as $value) { ?>
+											<?php
+											foreach ($data as $value) { ?>
 												<tr class="sub-tb-row">
 													<td>
 														<div class="flag">
@@ -60,30 +60,40 @@
 														</div>
 													</td>
 													<td>
-														<?= $value->ma_th ?>
-													</td>
-													<td>
-														<?= $value->ten_th ?>
-													</td>
-													<td class="text-center">
-														<a href="trademark/edit/<?= $value->id ?>" class="btn btn-warning">Sửa</a>
-														<a href="trademark/delete/<?= $value->id ?>" class="btn btn-danger">Xóa</a>
+														<a href="category/edit/<?= $value->id ?>" id="btn-edit" class="text-dark">
+															<?= $value->ma_th ?>
+														</a>
 
 													</td>
-												</tr>
-												<?php } ?>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td class="text-right">
-														<button class="btn btn-default" id="btn-xem-them">
-															Xem them
-														</button>
+													<td>
+														<a href="category/edit/<?= $value->id ?>" id="btn-edit" class="text-dark">
+															<?= $value->ten_th ?>
+														</a>
+													</td>
+													<td class="text-center">
+														<a href="category/edit/<?= $value->id ?>" id="btn-edit" class="btn btn-warning">Sửa</a>
 													</td>
 												</tr>
+											<?php } ?>
+											</tbody>
+											<tfoot>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td class="text-center">
+													<div id="xem_them">
+														<?php
+														if ($count > count($data)){
+															?>
+															<button class="btn btn-default" id="btn-xem-them">
+																Xem them
+															</button>
+														<?php } ?>
+
+													</div>
+												</td>
+											</tr>
 											</tfoot>
 										</table>
 									</div>

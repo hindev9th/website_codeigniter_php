@@ -53,12 +53,7 @@
 
 
 		ClassicEditor
-			.create( document.querySelector( '#noi_dung' ) , {
-				cloudServices: {
-					tokenUrl: 'https://example.com/cs-token-endpoint',
-					uploadUrl: 'https://your-organization-id.cke-cs.com/easyimage/upload/'
-				}
-			})
+			.create( document.querySelector( '#noi_dung' )
 			.catch( error => {
 				console.error( error );
 			} );

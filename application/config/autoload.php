@@ -135,4 +135,5 @@ $autoload['language'] = array();
 $autoload['model'] = array(
 	'admin/Category_model',
 	'admin/Trademark_model',
-	'admin/News_model');
+	'admin/News_model',
+	'admin/Product_model');

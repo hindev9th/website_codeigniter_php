@@ -17,14 +17,18 @@
 				</div>
 			</td>
 			<td>
-				<?= $value->ma_dm ?>
+				<a href="category/edit/<?= $value->id ?>" id="btn-edit" class="text-dark">
+					<?= $value->ma_dm ?>
+				</a>
+
 			</td>
 			<td>
-				<?= $value->ten_dm ?>
+				<a href="category/edit/<?= $value->id ?>" id="btn-edit" class="text-dark">
+					<?= $value->ten_dm ?>
+				</a>
 			</td>
 			<td class="text-center">
-				<a href="category/edit" class="btn btn-warning">Sửa</a>
-				<a href="category/delete" class="btn btn-danger">Xóa</a>
+				<a href="category/edit/<?= $value->id ?>" id="btn-edit" class="btn btn-warning">Sửa</a>
 			</td>
 		</tr>
 	<?php } ?>
@@ -34,10 +38,14 @@
 		<td></td>
 		<td></td>
 		<td></td>
-		<td class="text-right">
-			<button class="btn btn-default" id="btn-xem-them">
-				Xem them
-			</button>
+		<td class="text-center">
+			<?php
+			if ($count > count($data)){
+				?>
+				<button class="btn btn-default" id="btn-xem-them">
+					Xem them
+				</button>
+			<?php } ?>
 		</td>
 	</tr>
 	</tfoot>
@@ -52,14 +60,16 @@
 				type: 'post',
 				data:{
 					max_data:get_nb
-				},success:function (data){
+				},beforeSend: function(){
+					$("#btn-xem-them").disable = true;
+					$("#btn-xem-them").addClass("is-loading");
+				}
+				,success:function (data){
+					$("#btn-xem-them").disable = false;
+					$("#btn-xem-them").removeClass("is-loading");
 					$('#table-data').html(data);
 				}
 			})
-		});
-		$('#btn-xem-nb').click(function (){
-			var	get_nb = $('.sub-tb-row').length;
-			alert(get_nb);
 		});
 
 	})

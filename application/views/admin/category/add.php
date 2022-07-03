@@ -10,6 +10,9 @@
 					</div>
 					<div class="ml-md-auto py-2 py-md-0">
 						<a href="<?= base_url() ?>index.php/admin/category" class="btn btn-secondary btn-round" id="btn-back">Quay lại</a>
+						<?php if(isset($data->id)) { ?>
+						<a href="<?= base_url() ?>index.php/admin/category/delete/<?= $data->id ?>" class="btn btn-danger btn-round" id="btn-delete">Xóa</a>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
@@ -25,11 +28,11 @@
 									<div class="table-responsive table-hover table-sales" id="table-data">
 										<form action="<?= base_url() ?>index.php/admin/category/save" method="post">
 											<input type="hidden" name="id" value="<?= isset($data->id) ? $data->id : '' ?>">
-											<label for="ma_dm" class="mb-0" >Mã danh mục</label>
+											<label for="ma_dm" class="mb-0" >Mã danh mục</label><span class="text-danger">*</span>
 											<input type="text" name="ma_dm" id="ma_dm" value="<?= isset($data->ma_dm) ? $data->ma_dm : '' ?>" placeholder="Mã danh mục" class="form-control">
-											<label for="ten_dm" class="mt-2 mb-0" >Tên danh mục</label>
+											<label for="ten_dm" class="mt-2 mb-0" >Tên danh mục</label><span class="text-danger">*</span>
 											<input type="text" name="ten_dm" id="ten_dm" value="<?= isset($data->ten_dm) ? $data->ten_dm : '' ?>" placeholder="Tên danh mục" class="form-control">
-											<input type="submit" class="btn btn-primary mt-2" value="Lưu">
+											<input type="submit" class="btn btn-primary mt-2" id="btn-luu" value="Lưu">
 										</form>
 									</div>
 								</div>

@@ -13,6 +13,7 @@ class Trademark extends CI_Controller
 		$this->load->view("include/header");
 		$this->load->view("include/menu-left");
 
+		$query['count'] = $this->Trademark_model->getCount();
 		$query['data'] = $this->Trademark_model->getData();
 		$this->load->view("admin/trademark/trademark", $query);
 	}
@@ -20,7 +21,9 @@ class Trademark extends CI_Controller
 	public function search()
 	{
 		$search = $this->input->post('search');
-		$max_data = $this->input->post('max_data') == 0 ? 25 : $this->input->post('max_data');
+		$max_data = $this->input->post('max_data') == 0 ? 20 : $this->input->post('max_data');
+
+		$query['count'] = $this->Trademark_model->getCount();
 		$query['data'] = $this->Trademark_model->search($search, $max_data);
 		$this->load->view('admin/trademark/table', $query);
 	}

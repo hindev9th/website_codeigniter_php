@@ -8,3 +8,6 @@
 	-webkit-line-clamp: 3;
 	line-height: 1.6rem;
 }
+.input-color-cus{
+	height: calc(2.25rem + 2px) !important;
+}

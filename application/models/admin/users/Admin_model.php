@@ -1,5 +1,5 @@
 <?php
-class Admin extends CI_Model{
+class Admin_model extends CI_Model{
 	protected $table = 'tb_admin';
 
 	public function __construct()
@@ -45,10 +45,16 @@ class Admin extends CI_Model{
 		return ($this->db->affected_rows() > 0) ? false : true;
 	}
 
-	public function update($id,$ma,$ten){
+	public function update($id,$ho_ten,$gioi_tinh,$ngay_sinh,$email,$sdt,$username,$password,$anh){
 		$data = array(
-			'ma_dm' => $ma,
-			'ten_dm' => $ten
+			'ho_ten' => $ho_ten,
+			'gioi_tinh' => $gioi_tinh,
+			'ngay_sinh' => $ngay_sinh,
+			'email' => $email,
+			'sdt' => $sdt,
+			'username' => $username,
+			'password' => $password,
+			'anh' => $anh
 		);
 
 		$this->db->where('id',$id);

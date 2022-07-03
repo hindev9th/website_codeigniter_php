@@ -59,12 +59,12 @@
 					</a>
 					<div class="collapse" id="base">
 						<ul class="nav nav-collapse">
-							<li id="sub-danh-muc">
+							<li class="sub-item-btn" id="sub-danh-muc">
 								<a href="<?=base_url() ?>index.php/admin/category">
 									<span class="sub-item">Danh mục</span>
 								</a>
 							</li>
-							<li id="sub-thuong-hieu">
+							<li class="sub-item-btn" id="sub-thuong-hieu">
 								<a href="<?=base_url() ?>index.php/admin/trademark">
 									<span class="sub-item">Thương hiệu</span>
 								</a>
@@ -72,43 +72,80 @@
 						</ul>
 					</div>
 				</li>
-				<li class="nav-item">
-					<a data-toggle="collapse" href="#sidebarLayouts">
+				<li class="nav-item" id="btn-product">
+					<a data-toggle="collapse" href="#product">
 						<i class="fas fa-th-list"></i>
 						<p>Sản phẩm</p>
 						<span class="caret"></span>
 					</a>
-					<div class="collapse" id="sidebarLayouts">
+					<div class="collapse" id="product">
 						<ul class="nav nav-collapse">
-							<li class="sub-item-btn">
-								<a href="sidebar-style-1.html">
+							<li class="sub-item-btn" id="sub-product-add">
+								<a href="<?= base_url() ?>index.php/admin/product/add">
 									<span class="sub-item">Thêm sản phẩm</span>
 								</a>
 							</li>
-							<li class="sub-item-btn">
-								<a href="overlay-sidebar.html">
+							<li class="sub-item-btn" id="sub-product">
+								<a href="<?= base_url() ?>index.php/admin/product">
 									<span class="sub-item">Sản phẩm</span>
 								</a>
 							</li>
 						</ul>
 					</div>
 				</li>
-				<li class="nav-item" id="tin-tuc">
-					<a data-toggle="collapse" href="#forms">
-						<i class="fas fa-pen-square"></i>
-						<p>Tin tức</p>
+				<li class="nav-item" id="gio_hang">
+					<a data-toggle="collapse" href="#order">
+						<i class="fa fa-shopping-cart"></i>
+						<p>Đơn hàng</p>
 						<span class="caret"></span>
 					</a>
-					<div class="collapse" id="forms">
+					<div class="collapse" id="order">
 						<ul class="nav nav-collapse">
 							<li class="sub-them-tin">
 								<a href="<?= base_url() ?>index.php/admin/news/add">
-									<span class="sub-item">Viết bài</span>
+									<span class="sub-item">Đơn hàng mới</span>
 								</a>
 							</li>
-							<li class="sub-tin-tuc">
-								<a href="<?= base_url() ?>index.php/admin/news">
-									<span class="sub-item">Tin tức</span>
+							<li class="sub-them-tin">
+								<a href="<?= base_url() ?>index.php/admin/news/add">
+									<span class="sub-item">Đơn hàng trả lại</span>
+								</a>
+							</li>
+							<li class="sub-them-tin">
+								<a href="<?= base_url() ?>index.php/admin/news/add">
+									<span class="sub-item">Đơn hàng hoàn thành</span>
+								</a>
+							</li>
+							<li class="sub-them-tin">
+								<a href="<?= base_url() ?>index.php/admin/news/add">
+									<span class="sub-item">Đơn hàng hủy</span>
+								</a>
+							</li>
+
+							<li class="sub-them-tin">
+								<a href="<?= base_url() ?>index.php/admin/news/add">
+									<span class="sub-item">Đơn hàng</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item" id="customer">
+					<a data-toggle="collapse" href="#users">
+						<i class="fa fa-users"></i>
+						<p>Người dùng</p>
+						<span class="caret"></span>
+					</a>
+					<div class="collapse" id="users">
+						<ul class="nav nav-collapse">
+							<li class="sub-them-tin">
+								<a href="<?= base_url() ?>index.php/admin/news/add">
+									<span class="sub-item">Quản trị</span>
+								</a>
+							</li>
+							<li class="sub-them-tin">
+								<a href="<?= base_url() ?>index.php/admin/news/add">
+									<span class="sub-item">Khách hàng</span>
 								</a>
 							</li>
 						</ul>

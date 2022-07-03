@@ -9,7 +9,7 @@
 						<h5 class="text-white op-7 mb-2">Danh sách danh mục</h5>
 					</div>
 					<div class="ml-md-auto py-2 py-md-0">
-						<a href="<?= base_url() ?>index.php/admin/category/add" class="btn btn-secondary btn-round">Thêm Danh mục</a>
+						<a href="<?= base_url() ?>index.php/admin/category/add" class="btn btn-secondary btn-round" id="btn-them">Thêm Danh mục</a>
 					</div>
 				</div>
 			</div>
@@ -60,15 +60,18 @@
 														</div>
 													</td>
 													<td>
-														<?= $value->ma_dm ?>
+														<a href="category/edit/<?= $value->id ?>" id="btn-edit" class="text-dark">
+															<?= $value->ma_dm ?>
+														</a>
+
 													</td>
 													<td>
-														<?= $value->ten_dm ?>
+														<a href="category/edit/<?= $value->id ?>" id="btn-edit" class="text-dark">
+															<?= $value->ten_dm ?>
+														</a>
 													</td>
 													<td class="text-center">
-														<a href="category/edit/<?= $value->id ?>" class="btn btn-warning">Sửa</a>
-														<a href="category/delete/<?= $value->id ?>" class="btn btn-danger">Xóa</a>
-
+														<a href="category/edit/<?= $value->id ?>" id="btn-edit" class="btn btn-warning">Sửa</a>
 													</td>
 												</tr>
 												<?php } ?>
@@ -78,10 +81,14 @@
 													<td></td>
 													<td></td>
 													<td></td>
-													<td class="text-right">
-														<button class="btn btn-default" id="btn-xem-them">
-															Xem them
-														</button>
+													<td class="text-center">
+														<?php
+														if ($count > count($data)){
+															?>
+															<button class="btn btn-default" id="btn-xem-them">
+																Xem them
+															</button>
+														<?php } ?>
 													</td>
 												</tr>
 											</tfoot>

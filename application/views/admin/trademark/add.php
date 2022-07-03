@@ -10,6 +10,9 @@
 					</div>
 					<div class="ml-md-auto py-2 py-md-0">
 						<a href="<?= base_url() ?>index.php/admin/trademark" class="btn btn-secondary btn-round" id="btn-back">Quay lại</a>
+						<?php if(isset($data->id)) { ?>
+							<a href="<?= base_url() ?>index.php/admin/trademark/delete/<?= $data->id ?>" class="btn btn-danger btn-round" id="btn-delete">Xóa</a>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
@@ -25,9 +28,9 @@
 									<div class="table-responsive table-hover table-sales" id="table-data">
 										<form action="<?= base_url() ?>index.php/admin/trademark/save" method="post">
 											<input type="hidden" name="id" value="<?= isset($data->id) ? $data->id : '' ?>">
-											<label for="ma_th" class="mb-0" >Mã thương hiệu</label>
+											<label for="ma_th" class="mb-0" >Mã thương hiệu</label><span class="text-danger">*</span>
 											<input type="text" name="ma_th" id="ma_th" value="<?= isset($data->ma_th) ? $data->ma_th : '' ?>" placeholder="Mã thương hiệu" class="form-control">
-											<label for="ten_th" class="mt-2 mb-0" >Tên thương hiệu</label>
+											<label for="ten_th" class="mt-2 mb-0" >Tên thương hiệu</label><span class="text-danger">*</span>
 											<input type="text" name="ten_th" id="ten_th" value="<?= isset($data->ten_th) ? $data->ten_th : '' ?>" placeholder="Tên thương hiệu" class="form-control">
 											<input type="submit" class="btn btn-primary mt-2" value="Lưu">
 										</form>
