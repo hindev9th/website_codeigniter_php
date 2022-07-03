@@ -17,7 +17,7 @@ class Admin extends CI_Controller
 
 		$query['count'] = $this->Admin_model->getCount();
 		$query['data'] = $this->Admin_model->getData();
-		$this->load->view("admin/users/admin/users/admin",$query);
+		$this->load->view("admin/users/admin/admin",$query);
 	}
 	public function search(){
 		$search = $this->input->post('search');
@@ -50,22 +50,28 @@ class Admin extends CI_Controller
 		$sdt = $this->input->post('sdt');
 		$username = $this->input->post('username');
 		$password = md5($this->input->post('password'));
+		$anh = $this->input->post('anh');
+		if (isset($_FILES['img_avt']['name'])  && !empty($_FILES['img_avt']['name'])){
+			$anh = time().$_FILES['img_avt']['name'];
+
+			move_uploaded_file($_FILES['img_avt']['tmp_name'] , base_url()."pub/upload/img/avt".time().$_FILES['img_avt']['name']);
+		}
 
 		if (empty($id)){
-			$this->Admin_model->insert($ma_dm,$ten_dm);
-			header("Location:".base_url()."index.php/admin/users/admin");
+			$this->Admin_model->insert($ho_ten,$gioi_tinh,$ngay_sinh,$email,$sdt,$username,$password,$anh);
+			header("Location:".base_url()."index.php/admin/users/admin/admin");
 
 		}else{
-			$this->Admin_model->update($id,$ma_dm,$ten_dm);
+			$this->Admin_model->update($id,$ho_ten,$gioi_tinh,$ngay_sinh,$email,$sdt,$username,$password,$anh);
 
-			header("Location:".base_url()."index.php/admin/users/admin");
+			header("Location:".base_url()."index.php/admin/users/admin/admin");
 
 		}
 	}
 
 	public function delete($id){
 		if($this->Admin_model->delete($id)){
-			header("Location:".base_url()."index.php/admin/users/admin");
+			header("Location:".base_url()."index.php/admin/users/admin/admin");
 		}else{
 
 		}

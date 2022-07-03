@@ -136,4 +136,7 @@ $autoload['model'] = array(
 	'admin/Category_model',
 	'admin/Trademark_model',
 	'admin/News_model',
-	'admin/Product_model');
+	'admin/Product_model',
+	'admin/users/Admin_model',
+	'admin/users/Customer_model'
+	);

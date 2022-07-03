@@ -130,7 +130,7 @@
 						</ul>
 					</div>
 				</li>
-				<li class="nav-item" id="customer">
+				<li class="nav-item" id="mn-users">
 					<a data-toggle="collapse" href="#users">
 						<i class="fa fa-users"></i>
 						<p>Người dùng</p>
@@ -138,13 +138,13 @@
 					</a>
 					<div class="collapse" id="users">
 						<ul class="nav nav-collapse">
-							<li class="sub-them-tin">
-								<a href="<?= base_url() ?>index.php/admin/news/add">
+							<li class="sub-them-tin" id="sub-users-admin">
+								<a href="<?= base_url() ?>index.php/admin/users/admin">
 									<span class="sub-item">Quản trị</span>
 								</a>
 							</li>
-							<li class="sub-them-tin">
-								<a href="<?= base_url() ?>index.php/admin/news/add">
+							<li class="sub-them-tin" id="sub-users-customer">
+								<a href="<?= base_url() ?>index.php/admin/users/customer">
 									<span class="sub-item">Khách hàng</span>
 								</a>
 							</li>
