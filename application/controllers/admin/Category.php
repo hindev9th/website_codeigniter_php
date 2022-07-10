@@ -1,8 +1,8 @@
 <?php
 class Category extends CI_Controller{
 
-	protected $header_top = "include/header";
-	protected $menu_left = "include/menu-left";
+	protected $header_top = "admin/include/header";
+	protected $menu_left = "admin/include/menu-left";
 
 
 	public function __construct()
@@ -22,7 +22,7 @@ class Category extends CI_Controller{
 		$search = $this->input->post('search');
 		$max_data = $this->input->post('max_data') == 0 ? 20 : $this->input->post('max_data');
 
-		$query['count'] = $this->Category_model->getCount();
+		$query['count'] = count($this->Category_model->search($search,$max_data));
 		$query['data'] = $this->Category_model->search($search,$max_data);
 		$this->load->view('admin/category/table',$query);
 	}
@@ -47,19 +47,19 @@ class Category extends CI_Controller{
 
 		if (empty($id)){
 			$this->Category_model->insert($ma_dm,$ten_dm);
-			header("Location:".base_url()."index.php/admin/category");
+			header("Location:".base_url()."admin/category");
 
 		}else{
 			$this->Category_model->update($id,$ma_dm,$ten_dm);
 
-			header("Location:".base_url()."index.php/admin/category");
+			header("Location:".base_url()."admin/category");
 
 		}
 	}
 
 	public function delete($id){
 		if($this->Category_model->delete($id)){
-			header("Location:".base_url()."index.php/admin/category");
+			header("Location:".base_url()."admin/category");
 		}else{
 
 		}

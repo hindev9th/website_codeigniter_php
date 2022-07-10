@@ -2,8 +2,8 @@
 
 class Customer extends CI_Controller
 {
-	protected $header_top = "include/header";
-	protected $menu_left = "include/menu-left";
+	protected $header_top = "admin/include/header";
+	protected $menu_left = "admin/include/menu-left";
 
 
 	public function __construct()
@@ -59,19 +59,19 @@ class Customer extends CI_Controller
 
 		if (empty($id)){
 			$this->Customer_model->insert($ho_ten,$gioi_tinh,$ngay_sinh,$sdt,$email,$password,$dia_chi,$anh);
-			header("Location:".base_url()."index.php/admin/users/customer/customer");
+			header("Location:".base_url()."admin/users/customer");
 
 		}else{
 			$this->Customer_model->update($id,$ho_ten,$gioi_tinh,$ngay_sinh,$sdt,$email,$password,$dia_chi,$anh);
 
-			header("Location:".base_url()."index.php/admin/users/customer/customer");
+			header("Location:".base_url()."admin/users/customer");
 
 		}
 	}
 
 	public function delete($id){
 		if($this->Customer_model->delete($id)){
-			header("Location:".base_url()."index.php/admin/users/customer/customer");
+			header("Location:".base_url()."admin/users/customer");
 		}else{
 
 		}

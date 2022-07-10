@@ -17,6 +17,7 @@ class Category_model extends CI_Model{
 		$data = $this->db->get($this->table,20,0);
 		return $data->	result();
 	}
+
 	public function search($search,$sl){
 		$this->db->like('ma_dm',$search);
 		$this->db->or_like('ten_dm',$search);

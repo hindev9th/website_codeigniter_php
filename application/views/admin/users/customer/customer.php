@@ -123,7 +123,7 @@
 		</div>
 	</div>
 
-	<?php $this->load->view("include/footer"); ?>
+	<?php $this->load->view("admin/include/footer"); ?>
 </div>
 <script>
 	$('.active').removeClass("active");

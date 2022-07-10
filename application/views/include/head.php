@@ -1,0 +1,25 @@
+<head>
+	<?php
+	load_css(array(
+		"assets/frontend/css/material-design-iconic-font.min.css",
+		"assets/frontend/images/menu/flag-icon/icon.png",
+		"assets/frontend/css/font-awesome.min.css",
+		"assets/frontend/css/fontawesome-stars.css",
+		"assets/frontend/css/meanmenu.css",
+		"assets/frontend/css/owl.carousel.min.css",
+		"assets/frontend/css/slick.css",
+		"assets/frontend/css/animate.css",
+		"assets/frontend/css/jquery-ui.min.css",
+		"assets/frontend/css/venobox.css",
+		"assets/frontend/css/nice-select.css",
+		"assets/frontend/css/magnific-popup.css",
+		"assets/frontend/css/bootstrap.min.css",
+		"assets/frontend/style.css",
+		"assets/frontend/css/responsive.css",
+
+	));
+	load_js(array(
+		"assets/frontend/js/vendor/modernizr-2.8.3.min.js",
+	))
+	?>
+</head>

@@ -9,7 +9,7 @@
 						<h5 class="text-white op-7 mb-2">Danh sách sản phẩm</h5>
 					</div>
 					<div class="ml-md-auto py-2 py-md-0">
-						<a href="<?= base_url() ?>index.php/admin/product/add" class="btn btn-secondary btn-round" id="btn-them">Thêm sản phẩm</a>
+						<a href="<?= base_url() ?>admin/product/add" class="btn btn-secondary btn-round" id="btn-them">Thêm sản phẩm</a>
 					</div>
 				</div>
 			</div>
@@ -112,6 +112,15 @@
 											</tfoot>
 										</table>
 									</div>
+									<div class="text-center">
+										<?php
+										if ($count > count($data)){
+											?>
+											<button class="btn btn-default" id="btn-xem-them">
+												Xem them
+											</button>
+										<?php } ?>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -121,9 +130,18 @@
 		</div>
 	</div>
 
-	<?php $this->load->view("include/footer"); ?>
+	<?php $this->load->view("admin/include/footer"); ?>
 </div>
 <script>
 	$('.active').removeClass("active");
 	$('#btn-product, #sub-product').addClass("active");
+
+	$('#btn-xem-them').click(function (){
+		var	get_nb = $('.sub-tb-row').length;
+		if (<?=$count?> > get_nb){
+			$(this).show();
+		}else {
+			$(this).hide();
+		}
+	});
 </script>

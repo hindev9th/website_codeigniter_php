@@ -1,17 +1,35 @@
-
+<div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Bạn có thật sự muốn xóa sản phẩm này ?</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				Có thể những thông tin liên quan đến sản phẩm sẽ bị xóa theo !
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+				<a  href="<?= base_url() ?>admin/product/delete/<?= isset($data->id) ? $data->id : '' ?>" type="button" class="btn btn-primary" id="btn-delete">Đồng ý</a>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="main-panel">
 	<div class="content">
 		<div class="panel-header bg-primary-gradient">
 			<div class="page-inner py-5">
 				<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 					<div>
-						<h2 class="text-white pb-2 fw-bold">Sản phẩm</h2>
-						<h5 class="text-white op-7 mb-2">Thêm sản phẩm</h5>
+						<h2 class="text-white pb-2 fw-bold">Danh mục</h2>
+						<h5 class="text-white op-7 mb-2">Thêm danh mục</h5>
 					</div>
 					<div class="ml-md-auto py-2 py-md-0">
-						<a href="<?= base_url() ?>index.php/admin/product" class="btn btn-secondary btn-round" id="btn-back">Quay lại</a>
+						<a href="<?= base_url() ?>admin/product" class="btn btn-secondary btn-round" id="btn-back">Quay lại</a>
 						<?php if(isset($data->id)) { ?>
-						<a href="<?= base_url() ?>index.php/admin/product/delete/<?= $data->id ?>" class="btn btn-danger btn-round" id="btn-delete">Xóa</a>
+							<button type="button" class="btn btn-danger btn-round"  data-toggle="modal" data-target="#delete-modal" >Xóa</button>
 						<?php } ?>
 					</div>
 				</div>
@@ -27,7 +45,7 @@
 							</div>
 						</div>
 						<div class="card-body">
-							<form action="<?= base_url() ?>index.php/admin/product/save" method="post" enctype="multipart/form-data">
+							<form action="<?= base_url() ?>admin/product/save" method="post" enctype="multipart/form-data">
 								<div class="row">
 									<div class="col-md-4"></div>
 									<div class="col-md-4">
@@ -89,13 +107,16 @@
 											</label>
 
 											<input id="file-input" type="file" onchange="loadFile(event)" style="display: none;" />
+											<div id="remove-img">
+
+											</div>
 										</div>
 									</div>
 								</div>
 								<div class="card mt-5">
 									<div class="card-header">
 										<div class="card-head-row card-tools-still-right">
-											<h4 class="card-title">Khác</h4>
+											<h4 class="card-title">Loại</h4>
 											<div class="card-tools">
 												<a class="btn btn-icon btn-link btn-primary btn-xs " id="btn-show-loai"><span class="fa fa-chevron-down" id="fr-fa-chevron-loai"></span></a>
 											</div>
@@ -105,54 +126,40 @@
 										<div class="row">
 											<div class="col-md" >
 												<div class="row">
-													<div class="col-md">
-														<label for="col-loai">Loại</label>
-													</div>
 													<div class="col-md text-right">
 														<a class="btn text-primary" id="btn-add-loai" title="Thêm một loại nữa"><i class="fa fa-plus-circle"></i></a>
 													</div>
 												</div>
 
-												<div id="col-loai" class="border-top mb-5">
+												<div id="col-loai" class="mb-5">
 													<div class="row m-3" id="sub-col-loai">
-														<div class="col-md-3"></div>
-														<div class="col-md-6">
-															<div class="row">
+														<div class="col-md">
+															<div class="row" id="row-loai">
 																<div class="col-md">
-																	<input type="text" name="loai[]" placeholder="Loại" class="form-control">
+																	<input type="text" name="loai[]" placeholder="Tên loại" class="form-control">
 																</div>
-																<div class="col-md">
-																	<input type="number" name="gia[]" placeholder="Giá" class="form-control">
-																</div>
-															</div>
-														</div>
-														<div class="col-md-3"></div>
-													</div>
-												</div>
-
-
-
-												<div class="row">
-													<div class="col-md">
-														<label for="col-mau-sac">Màu sắc</label>
-													</div>
-													<div class="col-md text-right">
-														<a class="btn text-primary" id="btn-add-mau" title="Thêm một màu nữa"><i class="fa fa-plus-circle"></i></a>
-													</div>
-												</div>
-												<div id="col-mau-sac" class="border-top">
-													<div class="row m-3">
-														<div class="col-md-4"></div>
-														<div class="col-md-4">
-															<div class="row">
 																<div class="col-md">
 																	<input type="color" name="ma_mau[]" class="form-control form-control-color input-color-cus">
 																</div>
 																<div class="col-md">
 																	<input type="text" name="ten_mau[]" placeholder="Tên màu" class="form-control">
 																</div>
+																<div class="col-md">
+																	<input type="number" name="so_luong[]" placeholder="Số lượng" class="form-control">
+																</div>
+																<div class="col-md">
+																	<input type="number" name="gia[]" placeholder="Giá" class="form-control">
+																</div>
+																<div class="col-md-1 text-right">
+																	<a class="btn text-danger btn-dl-loai" id="btn-dl-loai" title="Thêm một loại nữa"><i class="fa fa-minus-circle"></i></a>
+																</div>
 															</div>
 														</div>
+														<script>
+															$('.btn-dl-loai').click(function (){
+																$(this).closest('#sub-col-loai').remove();
+															});
+														</script>
 													</div>
 												</div>
 											</div>
@@ -167,7 +174,7 @@
 			</div>
 		</div>
 	</div>
-	<?php $this->load->view("include/footer"); ?>
+	<?php $this->load->view("admin/include/footer"); ?>
 </div>
 <script>
 	ClassicEditor
@@ -191,10 +198,7 @@
 		$('#col-loai').append(loai_html);
 	});
 
-	var mau_html = $('#col-mau-sac').html();
-	$('#btn-add-mau').click(function (){
-		$('#col-mau-sac').append(mau_html);
-	});
+
 
 	var img_html = $('#sub-cart-image').html();
 	var loadFile = function(event) {

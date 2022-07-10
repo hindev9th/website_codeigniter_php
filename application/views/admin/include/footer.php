@@ -25,4 +25,4 @@
 		</div>
 	</div>
 </footer>
-<?php $this->load->view('include/foot'); ?>
+<?php $this->load->view('admin/include/foot'); ?>

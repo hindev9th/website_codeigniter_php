@@ -11,11 +11,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Admin</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<?php $this->load->view('include/head'); ?>
+	<?php $this->load->view('admin/include/head'); ?>
 	<script>
 		WebFont.load({
 			google: {"families":["Lato:300,400,700,900"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['<?=base_url() ?>assets/css/fonts.min.css']},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['<?=base_url() ?>assets/admin/css/fonts.min.css']},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -34,7 +34,7 @@
 		<div class="logo-header" data-background-color="blue">
 
 			<a href="index.html" class="logo">
-				<img src="<?=base_url() ?>assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
+				<img src="<?=base_url() ?>assets/admin/img/logo.svg" alt="navbar brand" class="navbar-brand">
 			</a>
 			<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -71,7 +71,7 @@
 									<div class="notif-center">
 										<a href="#">
 											<div class="notif-img">
-												<img src="<?=base_url() ?>assets/img/jm_denis.jpg" alt="Img Profile">
+												<img src="<?=base_url() ?>assets/admin/img/jm_denis.jpg" alt="Img Profile">
 											</div>
 											<div class="notif-content">
 												<span class="subject">Jimmy Denis</span>
@@ -83,7 +83,7 @@
 										</a>
 										<a href="#">
 											<div class="notif-img">
-												<img src="<?=base_url() ?>assets/img/chadengle.jpg" alt="Img Profile">
+												<img src="<?=base_url() ?>assets/admin/img/chadengle.jpg" alt="Img Profile">
 											</div>
 											<div class="notif-content">
 												<span class="subject">Chad</span>
@@ -95,7 +95,7 @@
 										</a>
 										<a href="#">
 											<div class="notif-img">
-												<img src="<?=base_url() ?>assets/img/mlane.jpg" alt="Img Profile">
+												<img src="<?=base_url() ?>assets/admin/img/mlane.jpg" alt="Img Profile">
 											</div>
 											<div class="notif-content">
 												<span class="subject">Jhon Doe</span>
@@ -107,7 +107,7 @@
 										</a>
 										<a href="#">
 											<div class="notif-img">
-												<img src="<?=base_url() ?>assets/img/talha.jpg" alt="Img Profile">
+												<img src="<?=base_url() ?>assets/admin/img/talha.jpg" alt="Img Profile">
 											</div>
 											<div class="notif-content">
 												<span class="subject">Talha</span>
@@ -157,7 +157,7 @@
 										</a>
 										<a href="#">
 											<div class="notif-img">
-												<img src="<?=base_url() ?>assets/img/profile2.jpg" alt="Img Profile">
+												<img src="<?=base_url() ?>assets/admin/img/profile2.jpg" alt="Img Profile">
 											</div>
 											<div class="notif-content">
 													<span class="block">

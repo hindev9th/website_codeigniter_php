@@ -10,8 +10,8 @@ class Trademark extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view("include/header");
-		$this->load->view("include/menu-left");
+		$this->load->view("admin/include/header");
+		$this->load->view("admin/include/menu-left");
 
 		$query['count'] = $this->Trademark_model->getCount();
 		$query['data'] = $this->Trademark_model->getData();
@@ -23,23 +23,23 @@ class Trademark extends CI_Controller
 		$search = $this->input->post('search');
 		$max_data = $this->input->post('max_data') == 0 ? 20 : $this->input->post('max_data');
 
-		$query['count'] = $this->Trademark_model->getCount();
+		$query['count'] = count($this->Trademark_model->search($search, $max_data));
 		$query['data'] = $this->Trademark_model->search($search, $max_data);
 		$this->load->view('admin/trademark/table', $query);
 	}
 
 	public function add()
 	{
-		$this->load->view("include/header");
-		$this->load->view("include/menu-left");
+		$this->load->view("admin/include/header");
+		$this->load->view("admin/include/menu-left");
 
 		$this->load->view("admin/trademark/add");
 	}
 
 	public function edit($id)
 	{
-		$this->load->view("include/header");
-		$this->load->view("include/menu-left");
+		$this->load->view("admin/include/header");
+		$this->load->view("admin/include/menu-left");
 
 		$query['data'] = $this->Trademark_model->edit($id);
 
@@ -54,14 +54,14 @@ class Trademark extends CI_Controller
 
 		if (empty($id)) {
 			if ($this->Trademark_model->insert($ma_th, $ten_th)) {
-				header("Location:" . base_url() . "index.php/admin/trademark");
+				header("Location:" . base_url() . "admin/trademark");
 			} else {
 
 			}
 		} else {
 			$this->Trademark_model->update($id, $ma_th, $ten_th);
 
-			header("Location:" . base_url() . "index.php/admin/trademark");
+			header("Location:" . base_url() . "admin/trademark");
 
 		}
 	}
@@ -69,7 +69,7 @@ class Trademark extends CI_Controller
 	public function delete($id)
 	{
 		if ($this->Trademark_model->delete($id)) {
-			header("Location:" . base_url() . "index.php/admin/trademark");
+			header("Location:" . base_url() . "admin/trademark");
 		} else {
 
 		}

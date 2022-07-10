@@ -5,11 +5,11 @@
 			<div class="page-inner py-5">
 				<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 					<div>
-						<h2 class="text-white pb-2 fw-bold">Danh mục</h2>
-						<h5 class="text-white op-7 mb-2">Danh sách danh mục</h5>
+						<h2 class="text-white pb-2 fw-bold">Người dùng</h2>
+						<h5 class="text-white op-7 mb-2">Danh sách quản trị viên</h5>
 					</div>
 					<div class="ml-md-auto py-2 py-md-0">
-						<a href="<?= base_url() ?>index.php/admin/users/admin/add" class="btn btn-secondary btn-round" id="btn-them">Thêm Danh mục</a>
+						<a href="<?= base_url() ?>admin/users/admin/add" class="btn btn-secondary btn-round" id="btn-them">Thêm quản trị viên</a>
 					</div>
 				</div>
 			</div>
@@ -66,13 +66,13 @@
 														</div>
 													</td>
 													<td>
-														<a href="users/admin/edit/<?= $value->id ?>" id="btn-edit" class="text-dark">
-															<?= $value->anh ?>
+														<a href="admin/edit/<?= $value->id ?>" id="btn-edit" class="text-dark">
+															<img src="<?=base_url()?>pub/upload/img/avt/<?= $value->anh ?>" class=" rounded-circle border" width="50px">
 														</a>
 
 													</td>
 													<td>
-														<a href="users/admin/edit/<?= $value->id ?>" id="btn-edit" class="text-dark">
+														<a href="admin/edit/<?= $value->id ?>" id="btn-edit" class="text-dark">
 															<?= $value->ho_ten ?>
 														</a>
 
@@ -90,34 +90,29 @@
 															<?= $value->email ?>
 													</td>
 													<td>
+														<a href="admin/edit/<?= $value->id ?>" id="btn-edit" class="text-dark">
 															<?= $value->username ?>
+														</a>
 													</td>
 													<td>
 															<?= $value->password ?>
 													</td>
 													<td class="text-center">
-														<a href="users/admin/edit/<?= $value->id ?>" id="btn-edit" class="btn btn-warning">Sửa</a>
+														<a href="admin/edit/<?= $value->id ?>" id="btn-edit" class="btn btn-warning">Sửa</a>
 													</td>
 												</tr>
 											<?php } ?>
 											</tbody>
-											<tfoot>
-											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td class="text-center">
-													<?php
-													if ($count > count($data)){
-														?>
-														<button class="btn btn-default" id="btn-xem-them">
-															Xem them
-														</button>
-													<?php } ?>
-												</td>
-											</tr>
-											</tfoot>
 										</table>
+									</div>
+									<div class="text-center">
+										<?php
+										if ($count > count($data)){
+											?>
+											<button class="btn btn-default" id="btn-xem-them">
+												Xem them
+											</button>
+										<?php } ?>
 									</div>
 								</div>
 							</div>
@@ -128,9 +123,19 @@
 		</div>
 	</div>
 
-	<?php $this->load->view("include/footer"); ?>
+	<?php $this->load->view("admin/include/footer"); ?>
 </div>
 <script>
 	$('.active').removeClass("active");
 	$('#mn-users, #sub-users-admin').addClass("active");
+
+
+	$('#btn-xem-them').click(function (){
+		var	get_nb = $('.sub-tb-row').length;
+		if (<?=$count?> > get_nb){
+			$(this).show();
+		}else {
+			$(this).hide();
+		}
+	});
 </script>

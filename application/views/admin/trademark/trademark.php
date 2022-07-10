@@ -76,26 +76,16 @@
 												</tr>
 											<?php } ?>
 											</tbody>
-											<tfoot>
-											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td class="text-center">
-													<div id="xem_them">
-														<?php
-														if ($count > count($data)){
-															?>
-															<button class="btn btn-default" id="btn-xem-them">
-																Xem them
-															</button>
-														<?php } ?>
-
-													</div>
-												</td>
-											</tr>
-											</tfoot>
 										</table>
+									</div>
+									<div class="text-center">
+										<?php
+										if ($count > count($data)){
+											?>
+											<button class="btn btn-default" id="btn-xem-them">
+												Xem them
+											</button>
+										<?php } ?>
 									</div>
 								</div>
 							</div>
@@ -106,9 +96,18 @@
 		</div>
 	</div>
 
-	<?php $this->load->view("include/footer"); ?>
+	<?php $this->load->view("admin/include/footer"); ?>
 </div>
 <script>
 	$('#home-page').removeClass("active");
 	$('#sub-thuong-hieu, #danh-muc').addClass("active");
+
+	$('#btn-xem-them').click(function (){
+		var	get_nb = $('.sub-tb-row').length;
+		if (<?=$count?> > get_nb){
+			$(this).show();
+		}else {
+			$(this).hide();
+		}
+	});
 </script>

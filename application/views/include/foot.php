@@ -1,0 +1,27 @@
+<head>
+	<?php
+	load_js(array(
+		"assets/frontend/js/vendor/jquery-1.12.4.min.js",
+		"assets/frontend/js/vendor/popper.min.js",
+		"assets/frontend/js/bootstrap.min.js",
+		"assets/frontend/js/ajax-mail.js",
+		"assets/frontend/js/jquery.meanmenu.min.js",
+		"assets/frontend/js/wow.min.js",
+		"assets/frontend/js/slick.min.js",
+		"assets/frontend/js/owl.carousel.min.js",
+		"assets/frontend/js/jquery.magnific-popup.min.js",
+		"assets/frontend/js/isotope.pkgd.min.js",
+		"assets/frontend/js/imagesloaded.pkgd.min.js",
+		"assets/frontend/js/jquery.mixitup.min.js",
+		"assets/frontend/js/jquery.countdown.min.js",
+		"assets/frontend/js/jquery.counterup.min.js",
+		"assets/frontend/js/waypoints.min.js",
+		"assets/frontend/js/jquery.barrating.min.js",
+		"assets/frontend/js/jquery-ui.min.js",
+		"assets/frontend/js/venobox.min.js",
+		"assets/frontend/js/jquery.nice-select.min.js",
+		"assets/frontend/js/scrollUp.min.js",
+		"assets/frontend/js/main.js",
+	))
+	?>
+</head>

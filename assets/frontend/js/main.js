@@ -1,11 +1,4 @@
 /*--------------------------------------------------
-Template Name: limupa;
-Description: limupa - Digital Products Store ECommerce Bootstrap 4 Template;
-Template URI:;
-Author Name:HasTech;
-Author URI:;
-Version: 1;
-Note: main.js, All Default Scripting Languages For This Theme Included In This File.
 -----------------------------------------------------
 		CSS INDEX
 		================
@@ -50,10 +43,13 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
  /*  02. Header Dropdown
  /*----------------------------------------*/
  	// Li's Dropdown Menu
- 	$('.ht-setting-trigger, .ht-currency-trigger, .ht-language-trigger, .hm-minicart-trigger, .cw-sub-menu').on('click', function (e) {
+	$('.ht-setting-trigger').click(function (){
+		$('.user-menu').slideToggle();
+	});
+ 	$(' .ht-currency-trigger, .ht-language-trigger, .hm-minicart-trigger, .cw-sub-menu').on('click', function (e) {
  		e.preventDefault();
  		$(this).toggleClass('is-active');
- 		$(this).siblings('.ht-setting, .ht-currency, .ht-language, .minicart, .cw-sub-menu li').slideToggle();
+ 		$(this).siblings(' .ht-currency, .ht-language, .minicart, .cw-sub-menu li').slideToggle();
  	});
  	$('.ht-setting-trigger.is-active').siblings('.catmenu-body').slideDown();
 /*----------------------------------------*/

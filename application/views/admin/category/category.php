@@ -9,7 +9,7 @@
 						<h5 class="text-white op-7 mb-2">Danh sách danh mục</h5>
 					</div>
 					<div class="ml-md-auto py-2 py-md-0">
-						<a href="<?= base_url() ?>index.php/admin/category/add" class="btn btn-secondary btn-round" id="btn-them">Thêm Danh mục</a>
+						<a href="<?= base_url() ?>admin/category/add" class="btn btn-secondary btn-round" id="btn-them">Thêm Danh mục</a>
 					</div>
 				</div>
 			</div>
@@ -76,23 +76,16 @@
 												</tr>
 												<?php } ?>
 											</tbody>
-											<tfoot>
-												<tr>
-													<td></td>
-													<td></td>
-													<td></td>
-													<td class="text-center">
-														<?php
-														if ($count > count($data)){
-															?>
-															<button class="btn btn-default" id="btn-xem-them">
-																Xem them
-															</button>
-														<?php } ?>
-													</td>
-												</tr>
-											</tfoot>
 										</table>
+									</div>
+									<div class="text-center">
+										<?php
+										if ($count > count($data)){
+											?>
+											<button class="btn btn-default" id="btn-xem-them">
+												Xem them
+											</button>
+										<?php } ?>
 									</div>
 								</div>
 							</div>
@@ -103,9 +96,18 @@
 		</div>
 	</div>
 
-	<?php $this->load->view("include/footer"); ?>
+	<?php $this->load->view("admin/include/footer"); ?>
 </div>
 <script>
 	$('#home-page').removeClass("active");
 	$('#sub-danh-muc, #danh-muc').addClass("active");
+
+	$('#btn-xem-them').click(function (){
+		var	get_nb = $('.sub-tb-row').length;
+		if (<?=$count?> > get_nb){
+			$(this).show();
+		}else {
+			$(this).hide();
+		}
+	});
 </script>

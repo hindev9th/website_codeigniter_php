@@ -1,10 +1,5 @@
 /*-----------------------------------------------------------------------------------
-		Template Name: limupa - Digital Products Store ECommerce Bootstrap 4 Template
-		Template URI: http://bootexperts.com
-		Description: This is digital products store html5 template for eCommerce websites, nice and clean design;
-		Author: HasTech
-		Author URI: 
-		Version: 1.0
+
 -----------------------------------------------------------------------------------
 		CSS INDEX
 		===================
@@ -1713,7 +1708,7 @@ textarea:focus {
 	text-align: left;
 	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-	transition: all 0.3s ease-in-out;
+
 }
 
 .setting {
@@ -1829,6 +1824,21 @@ textarea:focus {
 	padding: 0 60px 0 33px;
 }
 
+.search-box-complete{
+	position: absolute;
+	top: 44px;
+	z-index: 10;
+}
+.search-box-complete>ul{
+	max-height: 50vh;
+	border-top: none;
+}
+.search-box-complete ul li a .row:hover{
+	background: #fed700;
+}
+.search-box-complete ul li a .row:hover div strong{
+	color: #fff;
+}
 /*Header Middle Right*/
 .header-middle-right {
 	display: flex;
@@ -2143,7 +2153,7 @@ textarea:focus {
 	color: #ffffff;
 }
 
-.hb-menu nav>ul>li>a::after {
+.hb-menu nav>ul>li.dropdown-holder>a::after {
 	content: "\f107";
 	position: absolute;
 	top: 8px;
@@ -3673,8 +3683,8 @@ textarea:focus {
 }
 
 .category-heading>h2>i {
-	float: ;
-	text-align: ;
+	/*float: ;*/
+	/*text-align: ;*/
 	float: right;
 	padding-right: 20px;
 	font-size: 12px;

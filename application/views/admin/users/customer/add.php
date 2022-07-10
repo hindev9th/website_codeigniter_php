@@ -1,17 +1,35 @@
-
+<div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Bạn có thật sự muốn xóa khách hàng này không ?</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				Cảnh báo ! Những thông tin liên quan đến khách hàng này có thể cũng bị xóa theo !
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+				<a  href="<?= base_url() ?>admin/users/customer/delete/<?= isset($data->id) ? $data->id : '' ?>" type="button" class="btn btn-primary" id="btn-delete">Đồng ý</a>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="main-panel">
 	<div class="content">
 		<div class="panel-header bg-primary-gradient">
 			<div class="page-inner py-5">
 				<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 					<div>
-						<h2 class="text-white pb-2 fw-bold">Người dùng</h2>
-						<h5 class="text-white op-7 mb-2">Thêm khách hàng</h5>
+						<h2 class="text-white pb-2 fw-bold">Danh mục</h2>
+						<h5 class="text-white op-7 mb-2">Thêm danh mục</h5>
 					</div>
 					<div class="ml-md-auto py-2 py-md-0">
 						<a href="<?= base_url() ?>admin/users/customer" class="btn btn-secondary btn-round" id="btn-back">Quay lại</a>
 						<?php if(isset($data->id)) { ?>
-							<a href="<?= base_url() ?>admin/users/customer/delete/<?= $data->id ?>" class="btn btn-danger btn-round" id="btn-delete">Xóa</a>
+							<button type="button" class="btn btn-danger btn-round"  data-toggle="modal" data-target="#delete-modal" >Xóa</button>
 						<?php } ?>
 					</div>
 				</div>
@@ -71,7 +89,7 @@
 			</div>
 		</div>
 	</div>
-	<?php $this->load->view("include/footer"); ?>
+	<?php $this->load->view("admin/include/footer"); ?>
 </div>
 <script>
 	$('.active').removeClass("active");
