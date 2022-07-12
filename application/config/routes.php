@@ -52,3 +52,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//admin
+$route['admin'] = 'admin/home';
+$route['admin/danh_muc'] = 'admin/category';
+$route['admin/them_danh_muc']['post'] = 'admin/category/add';
+$route['admin/luu_danh_muc/'] = 'admin/category/save';
+$route['admin/thuong_hieu'] = 'admin/trademark';
+$route['admin/them_thuong_hieu'] = 'admin/trademark/add';
+$route['admin/luu_thuong_hieu/'] = 'admin/trademark/save';

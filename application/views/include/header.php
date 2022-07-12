@@ -73,9 +73,9 @@
 					<div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
 
 						<form action="#" class="hm-searchbox">
-							<input type="text" placeholder="Tìm kiếm ...">
+							<input type="text" placeholder="Tìm kiếm ..." id="search-input">
 							<button class="li-btn" type="submit"><i class="fa fa-search"></i></button>
-							<div class="search-box-complete w-100">
+							<div class="search-box-complete w-100" id="search-box-complete">
 								<ul class="list-complete list-group list-group-item ui-state-hover">
 									<li class="complete border-bottom">Kết quả tìm kiếm...</li>
 									<li class="complete border-bottom">

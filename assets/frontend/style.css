@@ -1825,6 +1825,7 @@ textarea:focus {
 }
 
 .search-box-complete{
+	display: none;
 	position: absolute;
 	top: 44px;
 	z-index: 10;
@@ -1839,6 +1840,12 @@ textarea:focus {
 .search-box-complete ul li a .row:hover div strong{
 	color: #fff;
 }
+@media (max-width: 480px) {
+	.search-box-complete ul li a .row div img{
+		display: none;
+	}
+}
+
 /*Header Middle Right*/
 .header-middle-right {
 	display: flex;

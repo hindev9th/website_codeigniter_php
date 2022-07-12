@@ -7,4 +7,9 @@ class Home extends CI_Controller{
 		$this->load->view('include/footer');
 
 	}
+
+	public function search()
+	{
+		
+	}
 }

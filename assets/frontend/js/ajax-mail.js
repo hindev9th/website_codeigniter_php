@@ -1,5 +1,22 @@
 $(function() {
 
+	//search
+	$('#search-input').keyup(function (){
+		if ($(this).val().length > 1){
+			$.ajax({
+				url: "/home/search",
+				type: 'GET',
+				data:{
+					search: $(this).val()
+				},success:function (data){
+					$('#search-box-complete').slideDown();
+				}
+			});
+		}
+		if ($(this).val().length == 0){
+			$('#search-box-complete').hide();
+		}
+	});
 	// Get the form.
 	var form = $('#contact-form');
 
